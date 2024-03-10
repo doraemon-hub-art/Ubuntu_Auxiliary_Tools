@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QKeyEvent>
 #include <QMessageBox>
+#include <QHotkey>
+#include "CutBoardWindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,10 +20,20 @@ public:
     ~MainWindow();
 
 private:
-    void keyPressEvent(QKeyEvent* event)override;
+    void onScreenShot();
+    void onTranslate();
+    void onCutBoard();
+
 
 private:
     Ui::MainWindow *ui;
+
+    QHotkey* m_screenShotHotkey;
+    QHotkey* m_translateHotkey;
+    QHotkey* m_cutBoardHotkey;
+
+    CutBoardWindow* m_cutBoardWindow;
+
 };
 
 #endif // MAINWINDOW_H

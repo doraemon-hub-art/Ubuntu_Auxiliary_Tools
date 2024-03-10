@@ -6,6 +6,8 @@
 
 QT       += core gui
 
+include(/home/xuan/workspace/code/qt/Ubuntu_Auxiliary_Tools/QHotkey/qhotkey.pri)
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Ubuntu_Auxiliary_Tools
@@ -26,13 +28,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        MainWindow.cpp
+        MainWindow.cpp \
+    CutBoardWindow.cpp
 
 HEADERS += \
-        MainWindow.h
+        MainWindow.h \
+    CutBoardWindow.h
 
 FORMS += \
-        MainWindow.ui
+        MainWindow.ui \
+    CutBoardWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
